@@ -11,10 +11,8 @@ const roleMiddleware = require("../middleware/roleMiddleware");
 const router = express.Router();
 
 
-// ======================================================
 // GET MY STORE
 // GET /api/owner/store
-// ======================================================
 
 router.get(
     "/store",
@@ -24,10 +22,9 @@ router.get(
 );
 
 
-// ======================================================
 // GET MY STORE RATINGS
 // GET /api/owner/ratings
-// ======================================================
+//
 
 router.get(
     "/ratings",

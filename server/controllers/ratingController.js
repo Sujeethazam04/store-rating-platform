@@ -1,9 +1,8 @@
 const pool = require("../config/db");
 
 
-// ======================================================
+
 // SUBMIT RATING
-// ======================================================
 
 const createRating = async (req, res) => {
     try {
@@ -15,9 +14,7 @@ const createRating = async (req, res) => {
         } = req.body;
 
 
-        // ==================================================
         // CHECK STORE
-        // ==================================================
 
         const storeResult = await pool.query(
             `SELECT id
@@ -34,9 +31,8 @@ const createRating = async (req, res) => {
         }
 
 
-        // ==================================================
+        //
         // CHECK EXISTING RATING
-        // ==================================================
 
         const existingRating = await pool.query(
             `SELECT id
@@ -58,9 +54,7 @@ const createRating = async (req, res) => {
         }
 
 
-        // ==================================================
         // CREATE RATING
-        // ==================================================
 
         const result = await pool.query(
             `INSERT INTO ratings
@@ -106,9 +100,8 @@ const createRating = async (req, res) => {
 };
 
 
-// ======================================================
 // UPDATE RATING
-// ======================================================
+//
 
 const updateRating = async (req, res) => {
     try {
@@ -119,9 +112,7 @@ const updateRating = async (req, res) => {
         const { rating } = req.body;
 
 
-        // ==================================================
         // CHECK STORE
-        // ==================================================
 
         const storeResult = await pool.query(
             `SELECT id
@@ -138,9 +129,8 @@ const updateRating = async (req, res) => {
         }
 
 
-        // ==================================================
+
         // CHECK USER RATING
-        // ==================================================
 
         const existingRating = await pool.query(
             `SELECT id
@@ -162,9 +152,7 @@ const updateRating = async (req, res) => {
         }
 
 
-        // ==================================================
         // UPDATE RATING
-        // ==================================================
 
         const result = await pool.query(
             `UPDATE ratings

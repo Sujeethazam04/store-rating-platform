@@ -1,9 +1,7 @@
 const pool = require("../config/db");
 
 
-// ======================================================
 // GET STORES FOR NORMAL USER
-// ======================================================
 
 const getUserStores = async (req, res) => {
     try {
@@ -59,9 +57,8 @@ const getUserStores = async (req, res) => {
         }
 
 
-        // ==================================================
+
         // SEARCH BY STORE ADDRESS
-        // ==================================================
 
         if (address) {
             query += `
@@ -73,9 +70,8 @@ const getUserStores = async (req, res) => {
         }
 
 
-        // ==================================================
         // GROUP BY
-        // ==================================================
+
 
         query += `
             GROUP BY
@@ -86,9 +82,8 @@ const getUserStores = async (req, res) => {
         `;
 
 
-        // ==================================================
+
         // SORTING
-        // ==================================================
 
         const allowedSortColumns = {
             name: "s.name",
@@ -112,9 +107,8 @@ const getUserStores = async (req, res) => {
         `;
 
 
-        // ==================================================
+
         // DATABASE QUERY
-        // ==================================================
 
         const result = await pool.query(
             query,
@@ -122,9 +116,8 @@ const getUserStores = async (req, res) => {
         );
 
 
-        // ==================================================
+
         // RESPONSE
-        // ==================================================
 
         res.status(200).json({
             success: true,

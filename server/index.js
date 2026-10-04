@@ -14,16 +14,15 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-// ================================
 // Middleware
-// ================================
+
 
 app.use(cors());
 app.use(express.json());
 
-// ================================
+//
 // Test Route
-// ================================
+
 app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/user", userRoutes);
@@ -37,9 +36,7 @@ app.get("/", (req, res) => {
     });
 });
 
-// ================================
 // Database Test Route
-// ================================
 
 app.get("/api/test-db", async (req, res) => {
     try {
@@ -60,9 +57,8 @@ app.get("/api/test-db", async (req, res) => {
     }
 });
 
-// ================================
+
 // Start Server
-// ================================
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

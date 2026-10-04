@@ -3,9 +3,7 @@ const jwt = require("jsonwebtoken");
 
 const pool = require("../config/db");
 
-// ==========================================
 // REGISTER USER
-// ==========================================
 const register = async (req, res) => {
     try {
         const {
@@ -33,9 +31,8 @@ const register = async (req, res) => {
             });
         }
 
-        // ==========================================
+
         // CHECK EMAIL
-        // ==========================================
 
         const existingUser = await pool.query(
             "SELECT id FROM users WHERE email = $1",
@@ -49,18 +46,14 @@ const register = async (req, res) => {
             });
         }
 
-        // ==========================================
         // HASH PASSWORD
-        // ==========================================
 
         const hashedPassword = await bcrypt.hash(
             password,
             10
         );
 
-        // ==========================================
         // CREATE USER
-        // ==========================================
 
         const result = await pool.query(
             `INSERT INTO users
@@ -90,9 +83,7 @@ const register = async (req, res) => {
 
         const user = result.rows[0];
 
-        // ==========================================
         // GENERATE JWT
-        // ==========================================
 
         const token = jwt.sign(
             {
@@ -105,9 +96,8 @@ const register = async (req, res) => {
             }
         );
 
-        // ==========================================
         // RESPONSE
-        // ==========================================
+
 
         res.status(201).json({
             success: true,
@@ -130,9 +120,8 @@ const register = async (req, res) => {
     }
 };
 
-// ==========================================
+
 // LOGIN USER
-// ==========================================
 
 const login = async (req, res) => {
     try {
@@ -272,9 +261,8 @@ const updatePassword = async (req, res) => {
 };
 
 
-// ==========================================
+
 // GET CURRENT USER
-// ==========================================
 
 const getMe = async (req, res) => {
     try {

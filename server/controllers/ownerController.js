@@ -1,8 +1,7 @@
 const pool = require("../config/db");
 
-// ======================================================
 // GET MY STORE
-// ======================================================
+
 
 const getMyStore = async (req, res) => {
     try {
@@ -62,9 +61,8 @@ const getMyStore = async (req, res) => {
 };
 
 
-// ======================================================
+
 // GET MY STORE RATINGS
-// ======================================================
 
 const getMyStoreRatings = async (req, res) => {
     try {
@@ -121,9 +119,8 @@ const getMyStoreRatings = async (req, res) => {
 };
 
 
-// ======================================================
+
 // EXPORTS
-// ======================================================
 
 module.exports = {
     getMyStore,

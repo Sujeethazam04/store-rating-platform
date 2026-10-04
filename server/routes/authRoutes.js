@@ -18,10 +18,8 @@ const authMiddleware = require("../middleware/authMiddleware");
 const router = express.Router();
 
 
-// ==========================================
 // REGISTER
 // POST /api/auth/register
-// ==========================================
 
 router.post(
     "/register",
@@ -31,10 +29,9 @@ router.post(
 );
 
 
-// ==========================================
 // LOGIN
 // POST /api/auth/login
-// ==========================================
+
 
 router.post(
     "/login",
@@ -42,10 +39,9 @@ router.post(
 );
 
 
-// ==========================================
 // UPDATE PASSWORD
 // PUT /api/auth/password
-// ==========================================
+//
 
 router.put(
     "/password",
@@ -56,10 +52,9 @@ router.put(
 );
 
 
-// ==========================================
 // GET CURRENT USER
 // GET /api/auth/me
-// ==========================================
+
 
 router.get(
     "/me",

@@ -3,9 +3,9 @@ const bcrypt = require("bcrypt");
 const pool = require("../config/db");
 
 
-// ======================================================
+
 // ADMIN DASHBOARD STATS
-// ======================================================
+
 
 const getDashboardStats = async (req, res) => {
     try {
@@ -57,9 +57,8 @@ const getDashboardStats = async (req, res) => {
 };
 
 
-// ======================================================
+
 // GET ALL USERS
-// ======================================================
 
 const getAllUsers = async (req, res) => {
     try {
@@ -252,9 +251,7 @@ const createUser = async (req, res) => {
 };
 
 
-// ======================================================
 // GET USER BY ID
-// ======================================================
 
 const getUserById = async (req, res) => {
     try {
@@ -301,9 +298,8 @@ const getUserById = async (req, res) => {
 };
 
 
-// ======================================================
 // CREATE STORE
-// ======================================================
+
 
 const createStore = async (req, res) => {
     try {
@@ -402,9 +398,8 @@ const createStore = async (req, res) => {
 };
 
 
-// ======================================================
 // GET ALL STORES
-// ======================================================
+//
 
 const getAllStores = async (req, res) => {
     try {
@@ -520,9 +515,7 @@ const getAllStores = async (req, res) => {
     }
 };
 
-// ======================================================
 // UPDATE STORE
-// ======================================================
 
 const updateStore = async (req, res) => {
     try {
@@ -627,9 +620,8 @@ const updateStore = async (req, res) => {
 };
 
 
-// ======================================================
+//
 // DELETE STORE
-// ======================================================
 
 const deleteStore = async (req, res) => {
     try {
@@ -676,9 +668,8 @@ const deleteStore = async (req, res) => {
     }
 };
 
-// ======================================================
 // UPDATE USER
-// ======================================================
+
 
 const updateUser = async (req, res) => {
     try {
@@ -710,9 +701,7 @@ const updateUser = async (req, res) => {
         }
 
 
-        // ----------------------------------------------
         // CHECK USER
-        // ----------------------------------------------
 
         const userResult = await pool.query(
             `SELECT id, email, role
@@ -749,9 +738,7 @@ const updateUser = async (req, res) => {
         }
 
 
-        // ----------------------------------------------
         // UPDATE WITH PASSWORD
-        // ----------------------------------------------
 
         if (password && password.trim()) {
 
@@ -797,9 +784,7 @@ const updateUser = async (req, res) => {
         }
 
 
-        // ----------------------------------------------
         // UPDATE WITHOUT PASSWORD
-        // ----------------------------------------------
 
         const result = await pool.query(
             `UPDATE users
@@ -848,18 +833,15 @@ const updateUser = async (req, res) => {
 };
 
 
-// ======================================================
+//
 // DELETE USER
-// ======================================================
 
 const deleteUser = async (req, res) => {
     try {
         const { id } = req.params;
 
 
-        // ----------------------------------------------
         // CHECK USER
-        // ----------------------------------------------
 
         const userResult = await pool.query(
             `SELECT
@@ -878,9 +860,8 @@ const deleteUser = async (req, res) => {
         }
 
 
-        // ----------------------------------------------
+
         // DELETE USER
-        // ----------------------------------------------
 
         await pool.query(
             `DELETE FROM users
@@ -908,9 +889,7 @@ const deleteUser = async (req, res) => {
     }
 };
 
-// ======================================================
 // EXPORTS
-// ======================================================
 
 module.exports = {
     getDashboardStats,
