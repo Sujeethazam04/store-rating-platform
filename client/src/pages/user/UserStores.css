@@ -1,0 +1,1184 @@
+/* =========================================================
+   USER STORES PAGE
+   ========================================================= */
+
+.stores-page {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 0%,
+            rgba(124, 58, 237, 0.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(59, 130, 246, 0.12),
+            transparent 30%
+        ),
+        #070b14;
+
+    color: #f8fafc;
+}
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.stores-grid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 42px 42px;
+}
+
+.stores-glow {
+    position: fixed;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    filter: blur(110px);
+    opacity: 0.12;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+.stores-glow-one {
+    top: -190px;
+    left: -130px;
+    background: #7c3aed;
+}
+
+.stores-glow-two {
+    right: -170px;
+    bottom: -190px;
+    background: #2563eb;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.stores-header {
+    position: relative;
+    z-index: 10;
+
+    min-height: 74px;
+
+    padding: 0 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(7, 11, 20, 0.82);
+
+    backdrop-filter: blur(18px);
+}
+
+.stores-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stores-brand-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #4f46e5
+    );
+
+    color: #fff;
+
+    box-shadow:
+        0 8px 24px rgba(124, 58, 237, 0.28);
+}
+
+.stores-brand > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.stores-brand strong {
+    font-size: 16px;
+    font-weight: 750;
+    color: #f8fafc;
+}
+
+.stores-brand span {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.stores-header-user {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.stores-user-avatar {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #4f46e5
+    );
+
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    box-shadow:
+        0 6px 20px rgba(124, 58, 237, 0.25);
+}
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.stores-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(1250px, calc(100% - 56px));
+
+    margin: 0 auto;
+
+    padding: 42px 0 60px;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.stores-hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+.stores-badge {
+    width: fit-content;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 7px 11px;
+    margin-bottom: 13px;
+
+    border: 1px solid rgba(139, 92, 246, 0.24);
+
+    border-radius: 999px;
+
+    background: rgba(139, 92, 246, 0.08);
+
+    color: #a78bfa;
+
+    font-size: 10px;
+    font-weight: 750;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.stores-hero h1 {
+    margin: 0;
+
+    max-width: 700px;
+
+    font-size: clamp(32px, 5vw, 50px);
+
+    line-height: 1.05;
+
+    letter-spacing: -0.045em;
+
+    font-weight: 850;
+
+    color: #f8fafc;
+}
+
+.stores-hero h1 span {
+    display: block;
+
+    color: #8b5cf6;
+}
+
+.stores-hero p {
+    max-width: 670px;
+
+    margin: 15px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+.stores-hero-stat {
+    min-width: 165px;
+
+    padding: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    backdrop-filter: blur(14px);
+
+    color: #facc15;
+}
+
+.stores-hero-stat > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.stores-hero-stat strong {
+    color: #f8fafc;
+
+    font-size: 25px;
+    line-height: 1;
+
+    font-weight: 800;
+}
+
+.stores-hero-stat span {
+    color: #64748b;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* =========================================================
+   FILTER CARD
+   ========================================================= */
+
+.stores-filter-card {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    padding: 15px;
+
+    margin-bottom: 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.14);
+}
+
+.stores-search-group {
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+    gap: 10px;
+}
+
+.stores-search-field {
+    flex: 1;
+
+    height: 44px;
+
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 0 13px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 10px;
+
+    background: rgba(0, 0, 0, 0.16);
+
+    color: #64748b;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.stores-search-field:focus-within {
+    border-color: rgba(139, 92, 246, 0.55);
+
+    box-shadow:
+        0 0 0 3px rgba(139, 92, 246, 0.08);
+}
+
+.stores-search-field input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #f8fafc;
+
+    font-size: 12px;
+}
+
+.stores-search-field input::placeholder {
+    color: #475569;
+}
+
+.stores-filter-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stores-filter-actions select {
+    height: 44px;
+
+    padding: 0 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    color: #cbd5e1;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.stores-filter-actions select option {
+    background: #0b1120;
+    color: #f8fafc;
+}
+
+.sort-order-button,
+.search-button,
+.clear-button {
+    height: 44px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.sort-order-button {
+    width: 44px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: #94a3b8;
+}
+
+.sort-order-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+
+    color: #fff;
+}
+
+.search-button {
+    padding: 0 15px;
+
+    border: 1px solid rgba(139, 92, 246, 0.3);
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #5b21b6
+    );
+
+    color: #fff;
+
+    box-shadow:
+        0 7px 20px rgba(124, 58, 237, 0.2);
+}
+
+.search-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 25px rgba(124, 58, 237, 0.28);
+}
+
+.clear-button {
+    padding: 0 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: #94a3b8;
+}
+
+.clear-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+
+    color: #fff;
+}
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.stores-success-message,
+.stores-error-message {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 14px;
+
+    margin-bottom: 18px;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+}
+
+.stores-success-message {
+    border: 1px solid rgba(34, 197, 94, 0.2);
+
+    background: rgba(34, 197, 94, 0.08);
+
+    color: #86efac;
+}
+
+.stores-error-message {
+    border: 1px solid rgba(239, 68, 68, 0.2);
+
+    background: rgba(239, 68, 68, 0.08);
+
+    color: #fca5a5;
+}
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.stores-section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 17px;
+}
+
+.stores-section-header span {
+    color: #8b5cf6;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+.stores-section-header h2 {
+    margin: 4px 0 0;
+
+    color: #f8fafc;
+
+    font-size: 20px;
+
+    font-weight: 750;
+}
+
+.stores-section-header > p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.stores-loading {
+    min-height: 280px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 13px;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.stores-spinner {
+    width: 40px;
+    height: 40px;
+
+    border: 3px solid rgba(255, 255, 255, 0.1);
+
+    border-top-color: #8b5cf6;
+
+    border-radius: 50%;
+
+    animation: storesSpin 0.8s linear infinite;
+}
+
+.stores-loading p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+@keyframes storesSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.stores-empty {
+    min-height: 320px;
+
+    padding: 40px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.stores-empty-icon {
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 14px;
+
+    border-radius: 15px;
+
+    background: rgba(139, 92, 246, 0.08);
+
+    color: #8b5cf6;
+}
+
+.stores-empty h3 {
+    margin: 0;
+
+    color: #e2e8f0;
+
+    font-size: 16px;
+}
+
+.stores-empty p {
+    max-width: 400px;
+
+    margin: 7px 0 17px;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+.stores-empty button {
+    height: 38px;
+
+    padding: 0 14px;
+
+    border: 1px solid rgba(139, 92, 246, 0.25);
+
+    border-radius: 9px;
+
+    background: rgba(139, 92, 246, 0.08);
+
+    color: #a78bfa;
+
+    font-size: 12px;
+    font-weight: 650;
+
+    cursor: pointer;
+}
+
+/* =========================================================
+   STORE LIST
+   ========================================================= */
+
+.stores-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+/* =========================================================
+   STORE CARD
+   ========================================================= */
+
+.store-card {
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 17px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(124, 58, 237, 0.07),
+            transparent 34%
+        ),
+        rgba(255, 255, 255, 0.035);
+
+    backdrop-filter: blur(14px);
+
+    transition:
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+.store-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(139, 92, 246, 0.24);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.store-card-main {
+    min-height: 120px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 13px;
+}
+
+.store-icon {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 58, 237, 0.2),
+            rgba(59, 130, 246, 0.14)
+        );
+
+    border: 1px solid rgba(139, 92, 246, 0.18);
+
+    color: #a78bfa;
+}
+
+.store-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.store-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.store-title-row h3 {
+    margin: 0;
+
+    overflow: hidden;
+
+    color: #f1f5f9;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rated-badge {
+    flex-shrink: 0;
+
+    padding: 4px 7px;
+
+    border: 1px solid rgba(34, 197, 94, 0.18);
+
+    border-radius: 999px;
+
+    background: rgba(34, 197, 94, 0.08);
+
+    color: #86efac;
+
+    font-size: 9px;
+    font-weight: 750;
+
+    text-transform: uppercase;
+}
+
+.store-address {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 6px;
+
+    margin-top: 10px;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+.store-address svg {
+    flex-shrink: 0;
+
+    margin-top: 1px;
+}
+
+/* =========================================================
+   OVERALL RATING
+   ========================================================= */
+
+.store-overall-rating {
+    min-width: 92px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 4px;
+}
+
+.overall-rating-number {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: #facc15;
+}
+
+.overall-rating-number strong {
+    color: #f8fafc;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.store-overall-rating > span {
+    color: #64748b;
+
+    font-size: 9px;
+
+    text-align: right;
+}
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.store-card-divider {
+    height: 1px;
+
+    margin: 0 20px;
+
+    background: rgba(255, 255, 255, 0.07);
+}
+
+/* =========================================================
+   CARD BOTTOM
+   ========================================================= */
+
+.store-card-bottom {
+    min-height: 76px;
+
+    padding: 16px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+}
+
+.community-rating,
+.your-rating {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.community-rating > span,
+.your-rating span {
+    color: #64748b;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.store-rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    color: #facc15;
+}
+
+.store-rating-stars svg {
+    flex-shrink: 0;
+}
+
+.your-rating {
+    align-items: flex-end;
+}
+
+.your-rating > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.your-rating small {
+    color: #a78bfa;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   RATING SELECTOR
+   ========================================================= */
+
+.rating-selector {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.rating-selector button {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid transparent;
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #475569;
+
+    cursor: pointer;
+
+    transition:
+        color 0.16s ease,
+        background 0.16s ease,
+        transform 0.16s ease;
+}
+
+.rating-selector button:hover:not(:disabled) {
+    color: #facc15;
+
+    background: rgba(250, 204, 21, 0.08);
+
+    transform: translateY(-1px);
+}
+
+.rating-selector button.selected {
+    color: #facc15;
+
+    background: rgba(250, 204, 21, 0.07);
+}
+
+.rating-selector button:disabled {
+    opacity: 0.55;
+
+    cursor: wait;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+    .stores-filter-card {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .stores-search-group {
+        width: 100%;
+    }
+
+    .stores-filter-actions {
+        width: 100%;
+    }
+
+    .stores-filter-actions select {
+        flex: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .stores-container {
+        width: min(100% - 36px, 1250px);
+
+        padding-top: 32px;
+    }
+
+    .stores-hero {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .stores-hero-stat {
+        min-width: 145px;
+    }
+
+    .stores-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .stores-header {
+        min-height: 68px;
+
+        padding: 0 15px;
+    }
+
+    .stores-header-user span {
+        display: none;
+    }
+
+    .stores-brand strong {
+        font-size: 15px;
+    }
+
+    .stores-brand span {
+        display: none;
+    }
+
+    .stores-container {
+        width: calc(100% - 24px);
+
+        padding-top: 24px;
+        padding-bottom: 40px;
+    }
+
+    .stores-hero h1 {
+        font-size: 31px;
+    }
+
+    .stores-hero p {
+        font-size: 13px;
+    }
+
+    .stores-search-group {
+        flex-direction: column;
+    }
+
+    .stores-filter-actions {
+        flex-wrap: wrap;
+    }
+
+    .stores-filter-actions select {
+        width: 100%;
+        flex: none;
+    }
+
+    .sort-order-button {
+        flex: 0 0 44px;
+    }
+
+    .search-button {
+        flex: 1;
+    }
+
+    .clear-button {
+        flex: 1;
+    }
+
+    .store-card-main {
+        padding: 17px;
+
+        flex-wrap: wrap;
+    }
+
+    .store-info {
+        min-width: calc(100% - 60px);
+    }
+
+    .store-overall-rating {
+        width: 100%;
+
+        padding-left: 59px;
+
+        align-items: flex-start;
+    }
+
+    .store-overall-rating > span {
+        text-align: left;
+    }
+
+    .store-card-bottom {
+        padding: 15px 17px;
+
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .your-rating {
+        width: 100%;
+
+        align-items: flex-start;
+    }
+
+    .your-rating > div:first-child {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+    .rating-selector button {
+        width: 31px;
+        height: 31px;
+    }
+}
